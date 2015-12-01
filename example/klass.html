@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>klass</title>
+		<script type="text/javascript" src="./../dist/klass.min.js"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+
+			var IPeple = {
+					 Wc:function(){}
+					,PaPa:function(){}
+				}
+			// var People= klass.extend({
+			var People= new klass({
+				 init:function(name,age){
+					this.age = age;
+					this.name = name;
+				 } 
+				,PaPa:function(){
+					console.log("啪啪.啪");
+				}
+				,Wc:function(){
+					console.log("去茅厕");
+				}
+				,Hi:function(){
+					console.log("hi , 我是" + this.name + ".我" +this.age+ "了");
+				}
+			}).test(IPeple);
+
+			var Man = People.extend({
+				init:function(name,age){
+					 this.supr(name,age);
+				}
+				,Wc:function(){
+					this.supr();
+					console.log("我是boy，我去男茅厕");
+				}
+			})
+			var Woman = People.extend({
+				init:function(name,age){
+					this.supr(name,age);
+				}
+				,Wc:function(){
+					this.supr();
+					console.log("我是girl，我去女茅厕");
+				}
+			})
+
+			var leo = new Man("leo",30);
+			leo.PaPa();
+			leo.Wc();
+			var leona = new Woman("leona",25);
+			leona.PaPa();
+			leona.Wc();
+			leona.Hi();
+			leo.Hi();
+		
+
+		
+		</script>
+	</body>
+</html>
