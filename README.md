@@ -1,5 +1,5 @@
 # klass
-javascript 面向对象编程实现，继承，父类方法，接口。
+javascript 面向对象编程实现，继承，父类方法，接口。<br />
 关键字：klass      类定义  new klass({});<br />
         extend     继承    <br />
 		init       构造函数<br /><br />
