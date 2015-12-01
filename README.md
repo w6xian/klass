@@ -1,10 +1,10 @@
 # klass
 javascript 面向对象编程实现，继承，父类方法，接口。
-关键字：klass      类定义  new klass({});
-        extend     继承    
-		init       构造函数
-        this.supr  调用父类方法
-        test       实现接口 {接口名：类型} 类型：{}对应object,ovt 数字对应number，function(){}对应函数，""对应字串。
+关键字：klass      类定义  new klass({});<br />
+        extend     继承    <br />
+		init       构造函数<br /><br />
+        this.supr  调用父类方法<br />
+        test       实现接口 {接口名：类型} 类型：{}对应object,ovt <br />数字对应number，function(){}对应函数，""对应字串。<br />
 
 公共方法：第一个字母为大字的时，该方法为公共方法，可以被继承。
 
