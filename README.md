@@ -52,6 +52,11 @@ var Man = People.extend({
 		console.log("我是boy，我去男茅厕");
 	}
 })
+var Leo = Man.extend({
+	init:function(name,age){
+		 this.supr(name,age);
+	}
+})
 var Woman = People.extend({
 	init:function(name,age){
 		this.supr(name,age);
@@ -65,13 +70,11 @@ var Woman = People.extend({
 
 ###实例化
 ``` js
-var leo = new Man("leo",30);
-leo.PaPa();
-leo.Wc();
-
-var leona = new Woman("leona",25);
-leona.PaPa();
-leona.Wc();
-leona.Hi();
-leo.Hi();
+var leo = new Leo("leo",30);
+	leo.PaPa();
+	leo.Wc();
+	// leo.say();  // 小写，不能被继承
+	var leona = new Woman("leona",25);
+	leona.Hi();
+	leo.Hi();
 ```

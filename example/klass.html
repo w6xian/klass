@@ -20,12 +20,16 @@
 				 init:function(name,age){
 					this.age = age;
 					this.name = name;
+					console.log("我是PEOPLE");
 				 } 
 				,PaPa:function(){
-					console.log("啪啪.啪");
+					console.log(this.name + "啪啪.啪");
 				}
 				,Wc:function(){
 					console.log("去茅厕");
+				}
+				,say:function(){
+					console.log("i can say");
 				}
 				,Hi:function(){
 					console.log("hi , 我是" + this.name + ".我" +this.age+ "了");
@@ -38,7 +42,12 @@
 				}
 				,Wc:function(){
 					this.supr();
-					console.log("我是boy，我去男茅厕");
+					console.log("我是"+this.name+"，我去男茅厕");
+				}
+			})
+			var Leo = Man.extend({
+				init:function(name,age){
+					 this.supr(name,age);
 				}
 			})
 			var Woman = People.extend({
@@ -51,12 +60,11 @@
 				}
 			})
 
-			var leo = new Man("leo",30);
+			var leo = new Leo("leo",30);
 			leo.PaPa();
 			leo.Wc();
+			// leo.say();  // 小写，不能被继承
 			var leona = new Woman("leona",25);
-			leona.PaPa();
-			leona.Wc();
 			leona.Hi();
 			leo.Hi();
 		

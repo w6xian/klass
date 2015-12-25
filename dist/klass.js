@@ -2,12 +2,12 @@
  * 	定义关键字klass
  *  约定：option为{}对象，其中init,为构造函数。
  */
-
+"use strict";
 ! function(name, context, definition) {
 	if (typeof define == 'function') define(definition)
 	else if (typeof module != 'undefined') module.exports = definition()
 	else context[name] = definition()
-}('klass', this, function() {
+}('klass', window, function() {
 	var klass = function(option) {
 			return klass.extend.call(function() {}, option)
 		}
@@ -47,7 +47,7 @@
 		/**
 		 * 子类有父类方法的关键。
 		 */
-		;for (index in tsupr) {
+		;for (var index in tsupr) {
 			var charcode = index.charCodeAt(0);
 			//只有第一个字母大字的才可以被继承
 			if (charcode >= 65 && charcode <= 90) {
@@ -55,7 +55,7 @@
 				;sup[index] = fo
 			}
 		};
-		;for (index in option) {
+		;for (var index in option) {
 			var fo = option[index];
 			if (klass.__isfunc(fo)) {
 				/**
@@ -72,12 +72,13 @@
 		;if (typeof sup.init === "function") {
 			fn = sup.init;
 		}
-		;fn.extend = arguments.callee
+		// ;fn.extend = arguments.callee
+		;fn.extend = klass.extend;
 		;fn.test = function(implement) {
 			/**
 			 * 
 			 */
-			for (key in implement) {
+			for (var key in implement) {
 				;var charcode = key.charCodeAt(0)
 				//只有第一个字母大写才是正宗的接口
 				;if (charcode >= 65 && charcode <= 90) {
