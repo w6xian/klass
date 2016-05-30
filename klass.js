@@ -7,7 +7,7 @@
 	if (typeof define == 'function') define(definition)
 	else if (typeof module != 'undefined') module.exports = definition()
 	else context[name] = definition()
-}('klass', window, function() {
+}('klass', typeof window == 'object'?window:{}, function() {
 	var klass = function(option) {
 			return klass.extend.call(function() {}, option)
 		}
@@ -35,7 +35,7 @@
 	}
 	klass.extend = function(option) {
 		;var supr = this
-		,	 tsupr = Object.create(this.prototype)
+		,	 tsupr = Object?Object.create(this.prototype):(supr && supr.prototype || {})
 		,    fn = function() {}
 		,    option = option || {};
 
