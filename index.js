@@ -42,6 +42,11 @@
 		;if (!klass.__isfunc(option.die)) {
 			option.die = function() {}
 		}
+		;if (!klass.__isfunc(option.init)) {
+			option.init = function() {
+				this.supr.apply(this,arguments);
+			}
+		}
 
 		;var sup = {}
 		/**

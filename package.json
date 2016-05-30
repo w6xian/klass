@@ -1,6 +1,6 @@
 {
-  "name": "klass.git",
-  "version": "1.0.0",
+  "name": "claz",
+  "version": "1.0.2",
   "description": "javascript 面向对象编程实现，继承，父类方法，接口。",
   "main": "index.js",
   "scripts": {
@@ -10,13 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/todayliu/klass.git"
   },
-  "author": "LEO",
+  "keywords": [
+    "claz"
+  ],
+  "author": "Leo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/todayliu/klass/issues"
   },
   "homepage": "https://github.com/todayliu/klass#readme",
-  "devDependencies": {
+   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.1"
